@@ -1,0 +1,52 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.main-container{
+    width: 100%;
+    height: 100vh;
+    background-color:  #22223b;
+    background-color:  #4a4e69;
+}
+.inner-main-container{
+    width: 90%;
+    margin: 0 auto;
+}
+.title-container{
+    padding: 20px;
+    letter-spacing: 1px;
+    font-size: 36px;
+    text-align: center;
+    color: #edf2f4;
+    font-family: 'Montserrat', sans-serif;
+}
+.div-control{
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+}
+
+#search-addon{
+    cursor: pointer;
+}
+
+#search-addon:hover{
+    background-color: #f5f3f4;
+}
+#search-addon:hover .fa-search{
+    color: #457b9d;
+}
+.ip-main-container{
+    color: #edf2f4;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 25px 0;
+}
+.ip-name{
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1.2px;
+    font-size: 18px;
+}
