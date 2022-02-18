@@ -1,52 +1,139 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=Montserrat:wght@100;200;300;400;500;600&family=Roboto:wght@100;300;400&display=swap');
+
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-.main-container{
+.main-container {
     width: 100%;
     height: 100vh;
-    background-color:  #22223b;
-    background-color:  #4a4e69;
+    background-color: #22223b;
+    background-color: #4a4e69;
 }
-.inner-main-container{
+
+.inner-main-container {
     width: 90%;
     margin: 0 auto;
 }
-.title-container{
+
+input[type="search"] {
+    letter-spacing: 1px;
+    font-size: 18px;
+    font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+
+.title-container {
     padding: 20px;
     letter-spacing: 1px;
     font-size: 36px;
     text-align: center;
     color: #edf2f4;
     font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
 }
-.div-control{
+
+.div-control {
     width: 90%;
     height: auto;
     margin: 0 auto;
 }
 
-#search-addon{
+#search-addon {
     cursor: pointer;
 }
 
-#search-addon:hover{
+#search-addon:hover {
     background-color: #f5f3f4;
 }
-#search-addon:hover .fa-search{
+
+#search-addon:hover .fa-search {
     color: #457b9d;
 }
-.ip-main-container{
+
+.ip-main-container {
+    position: relative;
     color: #edf2f4;
     display: flex;
     justify-content: space-around;
     width: 100%;
+    height: 100%;
     margin: 25px 0;
 }
-.ip-name{
+
+.ip-name {
     font-family: 'Roboto', sans-serif;
     letter-spacing: 1.2px;
     font-size: 18px;
+}
+
+th, td {
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: white;
+    padding: 0.5rem;
+}
+
+.loader-main-container {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #4a4e69;
+    z-index: 99;
+}
+
+.inner-loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 70%;
+}
+
+/*-------------------------- Loader ---------------------*/
+
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #fff transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
