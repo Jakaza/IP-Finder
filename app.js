@@ -1,10 +1,7 @@
 const loaderEl = document.getElementById('loader-container');
 const searchButton = document.getElementById('search-addon');
 const inputEl = document.querySelector('.inputEl');
-
-// searchButton.addEventListener('click', loadData);
 document.addEventListener('DOMContentLoaded', loadData)
-
 
 function loadData() {
 
@@ -18,13 +15,9 @@ function loadData() {
     http.onprogress = function () {
         loaderEl.style.display = 'block';
     }
-
     http.open('GET', 'http://ip-api.com/json/')
     http.send();
 }
-
-//223367100@tut4life.ac.za
-//Lukhanyiso@05
 
 function displayData(data) {
     loaderEl.style.display = 'none';
@@ -73,11 +66,7 @@ function displayData(data) {
             </tr>
           </tbody>
     `;
-
-    console.log(data);
-
     document.querySelector('.table').innerHTML = template;
-
 }
 
 
