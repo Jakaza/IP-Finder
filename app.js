@@ -11,6 +11,7 @@ function loadData() {
     http.onload = function() {
         if (this.status == 200) {
             let data = JSON.parse(http.response);
+            loaderEl.style.display = 'none';
             displayData(data);
         }
     }
@@ -36,8 +37,6 @@ async function fetchData() {
 
 
 function displayData(data) {
-    loaderEl.style.display = 'none';
-
     console.log(data);
 
     if (data.status == "success") {
