@@ -6,6 +6,8 @@ body,
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
+    list-style: none;
 }
 
 body{
@@ -16,7 +18,9 @@ body{
 
 :root{
 
-    --dark_blue: #1f4872;
+    --dark_blue1: #1f4872;
+    --dark_blue2: #2d587f;
+    --dark_blue3: #0087bc;
 
 
 }
@@ -44,8 +48,66 @@ main{
 
 
 .ip_container{
+    display: flex;
     width: 100%;
-    background-color: var(--dark_blue);
+    background-color: var(--dark_blue1);
     min-height: 600px;
     border-radius: 8px;
+    padding: 25px 15px;
+    color: white;
+}
+.ip_container > section{
+    width: 50%;
+}
+.title{
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.ip_box{
+    min-width: 60%;
+    margin: 10px 0;
+    min-height: 40px;
+    background-color: var(--dark_blue2);
+}
+.ip_box h1{
+    font-weight: 700;
+}
+
+.ip_details-con{
+    padding: 25px 0 0 0;
+}
+
+.ip_details{
+    min-width: 60%;
+    min-height: 280px;
+    padding: 15px;
+    background-color: var(--dark_blue2);
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+.flag_con{
+    width: 80px;
+    height: 40px;
+    margin-bottom: 8px;
+    background-color: red;
+    overflow: hidden;
+}
+
+.map_view{
+    width: 100%;
+    height: 100%;
+    padding: 25px;
+    border-radius: 8px;
+    background-color: red;
+}
+
+.map{
+    width: 100%;
+    height: 80%;
+    border-radius: 8px;
+    overflow: hidden;
 }
