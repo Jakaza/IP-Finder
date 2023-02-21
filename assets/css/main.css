@@ -1,0 +1,51 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
+body,
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    overflow: hidden;
+    background-color: #f2f3f4;
+}
+
+
+:root{
+
+    --dark_blue: #1f4872;
+
+
+}
+
+main{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner{
+    width: 80%;
+    margin: 0 auto;
+    height: auto;
+}
+
+
+.search_container{
+    width: 50%;
+    margin-bottom: 25px;
+}
+
+
+.ip_container{
+    width: 100%;
+    background-color: var(--dark_blue);
+    min-height: 600px;
+    border-radius: 8px;
+}
