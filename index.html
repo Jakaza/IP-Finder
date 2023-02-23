@@ -31,17 +31,17 @@
         <div class="inner">
 
 
-            <div class="search_container">
+            <form class="search_container" id="formEl">
                 <div class="row g-3">
                     <div class="col">
-                      <input type="text" class="form-control" placeholder="Enter Keywords or IP Address…" aria-label="First name">
+                      <input type="text" id="url" class="form-control" placeholder="Enter Keywords or IP Address…" aria-label="First name">
                       <small class="text-muted">Example : https://www.google.com/</small>
                     </div>
                     <div class="col">
                         <button type="submit" class="btn btn-primary">Search</button>
                     </div>
                   </div>
-            </div>
+            </form>
 
             <div class="ip_container">
                 <section>
@@ -81,7 +81,7 @@
                 <section>
                     <div class="map_view">
                         <div class="map">
-                            <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=24.376602172851562%2C-28.78541360567404%2C24.949951171875%2C-28.510030816427154&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/#map=12/-28.6478/24.6633">View Larger Map</a></small>
+                          
                         </div>
                     </div>
                 </section>
@@ -92,33 +92,8 @@
     </main>
       
 
-    <script type="text/javascript">
-        //Defining map as a global variable to access from    //other functions  var map;  
-
-        function initMap() {
-            //Enabling new cartography and themes    
-            google.maps.visualRefresh = true;
-            //Setting starting options of map    
-            var mapOptions = {
-                center: new google.maps.LatLng(-25.7599, 28.2604),
-                zoom: 10,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            };
-            //Getting map DOM element    
-            var mapElement = document.getElementById('mapDiv');
-            //Creating a map with DOM element which is just      
-            //obtained    
-            map = new google.maps.Map(mapElement, mapOptions);
-
-        }
-
-        google.maps.event.addDomListener(window, 'load', initMap);
-    </script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="app.js"></script>
-
-
-
 
 
 </body>
