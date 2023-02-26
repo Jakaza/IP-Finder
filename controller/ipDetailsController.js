@@ -1,8 +1,14 @@
 const path = require("path")
 
 
-const currentUserIp = (req, res) =>{
-  res.render(path.join(__dirname, "..", "index"))
+const currentUserIp = (req, res) => {
+
+
+  let name = "Jakaza";
+
+
+
+  res.render(path.join(__dirname, "..", "index"), { name })
 }
 
 
