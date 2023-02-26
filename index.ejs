@@ -47,9 +47,8 @@
                 <section>
                     <div class="ip_address-con">
                         <h3 class="title">My Ip Address Is</h3>
-<h2><%= name %></h2>
                         <div class="ip_box">
-                            <h1>IPv4 <span id="ip_v4"></span></h1>
+                            <h1>IPv4 <span id="ip_v4"> <%= data.ip%> </span></h1>
                         </div>
 
                         <div class="ip_box">
@@ -62,12 +61,11 @@
                         <h4>My IP Information:</h4>
                         <div class="ip_details">
                             <div class="flag_con">
-                       
                             </div>
                             <ul>
                                 
-                                <li>ASN</li>
-                                <li>isp</li>
+                                <li>ASN <%= data.connection.asn%></li>
+                                <li>isp <%= data.connectionisp%></li>
                                 <li>currency_code</li>
                                 <li>region/provice</li>
                                 <li>continent</li>

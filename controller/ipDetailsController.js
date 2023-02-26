@@ -1,15 +1,13 @@
 const path = require("path")
+const axios = require("axios")
 
 
-const currentUserIp = (req, res) => {
+const currentUserIp = async (req, res) => {
+
+  const raw = await axios.get("http://ipwho.is")
+  const data = await raw.data;
   
-
-
-  let name = "Jakaza";
-
-
-
-  res.render(path.join(__dirname, "..", "index"), { name })
+  res.render(path.join(__dirname, "..", "index"), { data })
 }
 
 
