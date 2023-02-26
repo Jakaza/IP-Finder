@@ -1,9 +1,7 @@
 const express = require("express")
-const path = require("path")
 const router = express.Router();
+const { currentUserIp } = require("../controller/ipDetailsController")
 
-router.get('/', (req, res) => {
-  res.render(path.join(__dirname, "..", "index"))
-});
+router.get('/',currentUserIp);
 
 module.exports = router;
