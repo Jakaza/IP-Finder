@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="public/assets/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/70b87a81bf.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Document</title>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js? key=AIzaSyAtUpCNzUtUl0W-35BbzTrMdnTMr2pkLQk&sensor=true"></script>
+    <!-- Font Awaresome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+
+</head>
+<style type="text/css">
+
+</style>
+
+<body>
+
+
+    <main>
+
+        <div class="inner">
+
+
+            <form class="search_container" id="formEl">
+                <div class="row g-3">
+                    <div class="col">
+                      <input type="text" id="url" class="form-control" placeholder="Enter Keywords or IP Address…" aria-label="First name">
+                      <small class="text-muted">Example : https://www.google.com/</small>
+                    </div>
+                    <div class="col">
+                        <button type="submit" class="btn btn-primary">Search</button>
+                    </div>
+                  </div>
+            </form>
+
+            <div class="ip_container">
+                <section>
+                    <div class="ip_address-con">
+                        <h3 class="title">My Ip Address Is</h3>
+
+                        <div class="ip_box">
+                            <h1>IPv4 <span id="ip_v4"></span></h1>
+                        </div>
+
+                        <div class="ip_box">
+                            <h1>IPv6 <span id="ip_v6"></span></h1>
+                        </div>
+
+                    </div>
+
+                    <div class="ip_details-con">
+                        <h4>My IP Information:</h4>
+                        <div class="ip_details">
+                            <div class="flag_con">
+                       
+                            </div>
+                            <ul>
+                                
+                                <li>ASN</li>
+                                <li>isp</li>
+                                <li>currency_code</li>
+                                <li>region/provice</li>
+                                <li>continent</li>
+                                <li>country</li>
+                                <li>country_capital</li>
+                                <li>Visit Number</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="map_view">
+                        <div class="map">
+                          
+                        </div>
+                    </div>
+                </section>
+                
+            </div>
+        </div>
+
+    </main>
+      
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="app.js"></script>
+
+
+</body>
+
+</html>
