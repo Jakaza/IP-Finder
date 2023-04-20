@@ -11,103 +11,337 @@ body,
 }
 
 body{
-    overflow: hidden;
-    background-color: #f2f3f4;
+    color: #c8e1ff;
+  background-color: rgb(26, 30, 34);
 }
 
-
-:root{
-
-    --dark_blue1: #1f4872;
-    --dark_blue2: #2d587f;
-    --dark_blue3: #0087bc;
-
-
+a {
+    text-decoration: none;
+    transition: all 0.2s ease-in-out 0s;
+    color: rgb(0, 112, 243);
+    display: inline-block;
 }
 
-main{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
+/****** form  ******/
+.form_container{
+  width: 100%;
+  heigh: 500px;
+  margin: 0 auto;
+}
+  form {
+    background-color: transparent;
+    border-radius: 5px;
+    padding: 2rem;
+    margin-bottom: 20vh;
+    max-width: 600px;
+    text-align: center;
+   }
+
+  label {
+      display: block;
+      font-size: 2.5rem;
+      font-weight: 500;
+      /* margin: 2rem; */
+    }
+
+    input {
+      background-color: #26303c;
+      outline: 0;
+      border: 0;
+      border-radius: 0.25rem;
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 1rem;
+      color: #c8e1ff;
+      font-family: 'SF Mono, Fira Code, Fira Mono, Roboto Mono, Lucida Console, Monaco, monospace';
+      font-size: 2rem;
+      font-weight: 400;
+      text-align: center;
+    }
+    .submit {
+      ${mixins.blueButton};
+      margin-top: 3rem;
+      filter: none;
+    }
+
+
+
+/************** main_container **********************/
+
+#main_container{
+  width: 100%;
+  min-height: auto;
+  background: #ff1a1a;
+}
+.hidden{
+  display: none;
+}
+.limit {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    padding: 1rem;
+}
+.num {
+    color: rgb(106, 115, 125);
+    font-size: 20px;
+    margin-bottom: 0.1rem;
+}
+
+.limit p {
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 1px;
+    margin: 0px;
+    color: rgb(88, 96, 105);
+}
+
+.ip_infor{
+  display: flex;
+    -webkit-box-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.ip_infor .avatar {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    border: 0.5rem solid rgb(0, 112, 243);
+    border-radius: 15px;
+    width: 150px;
+    height: 80px;
+  margin-top: 15px;
+}
+.ip_infor .avatar img {
+    border-radius: 0px;
+}
+
+.ip_infor .avatar img {
+    width: 100%;
+    max-width: 100%;
+    height: 50px;
+    vertical-align: middle;
+}
+
+.ip_infor  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  font-weight: 500;
+    color: rgb(246, 248, 250);
+}
+
+.ip_infor h2 {
+    font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", "Lucida Console", Monaco, monospace;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.ip_infor h2 a {
+    color: rgb(0, 112, 243);
+}
+
+.ip_infor .info {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
     align-items: center;
 }
 
-.inner{
-    width: 80%;
-    margin: 0 auto;
-    height: auto;
-}
-
-
-.search_container{
-    width: 50%;
-    margin-bottom: 25px;
-}
-
-
-.ip_container{
+.ip_infor .info__item {
     display: flex;
-    width: 100%;
-    background-color: var(--dark_blue1);
-    min-height: 600px;
-    border-radius: 8px;
-    padding: 25px 15px;
-    color: white;
-}
-.ip_container > section{
-    width: 50%;
-}
-.title{
-    font-weight: 600;
-    text-transform: uppercase;
-}
-.ip_box{
-    min-width: 60%;
-    margin: 10px 0;
-    min-height: 40px;
-    background-color: var(--dark_blue2);
-}
-.ip_box h1{
-    font-weight: 700;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    margin: 0px 1rem 0.5rem;
+    white-space: nowrap;
 }
 
-.ip_details-con{
-    padding: 25px 0 0 0;
+.ip_infor .info__item svg {
+    margin-right: 10px;
+}
+/****************** generail_ip_info *******************/
+
+.generail_ip_info{
+  background: yellow;
+  width: 80%;
+  margin: 0 auto;
 }
 
-.ip_details{
-    min-width: 60%;
-    min-height: 280px;
-    padding: 15px;
-    background-color: var(--dark_blue2);
+.olcards,
+.olcards * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-ul {
-    padding: 0;
-    margin: 0;
+.olcards {
+  list-style: none;
+  counter-reset: cardCount;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  --cardsGap: 1rem;
+  gap: var(--cardsGap);
+  padding-bottom: var(--cardsGap);
+}
+.olcards li {
+  counter-increment: cardCount;
+  display: flex;
+  color: white;
+  --labelOffset: 1rem;
+  --arrowClipSize: 1.5rem;
+  margin-top: var(--labelOffset);
 }
 
-.flag_con{
-    width: 80px;
-    height: 40px;
-    margin-bottom: 8px;
-    background-color: red;
-    overflow: hidden;
+.olcards li::before {
+  content: counter(cardCount, decimal-leading-zero);
+  background: white;
+  color: var(--cardColor);
+  font-size: 2em;
+  font-weight: 700;
+  transform: translateY(calc(-1 * var(--labelOffset)));
+  margin-right: calc(-1 * var(--labelOffset));
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 0.5em;
 }
 
-.map_view{
-    width: 100%;
-    height: 100%;
-    padding: 25px;
-    border-radius: 8px;
-    background-color: red;
+.olcards li .content {
+  background-color: var(--cardColor);
+  --inlinePadding: 1em;
+  --boxPadding: 0.5em;
+  display: grid;
+  padding: var(--boxPadding) calc(var(--inlinePadding) + var(--arrowClipSize))
+    var(--boxPadding) calc(var(--inlinePadding) + var(--labelOffset));
+  grid-template-areas:
+    "icon title"
+    "icon text";
+  gap: 0.25em 1em;
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--arrowClipSize)) 0,
+    100% 50%,
+    calc(100% - var(--arrowClipSize)) 100%,
+    calc(100% - var(--arrowClipSize)) calc(100% + var(--cardsGap)),
+    0 calc(100% + var(--cardsGap))
+  );
+  position: relative;
+}
+.olcards li .content::before {
+  content: "";
+  position: absolute;
+  width: var(--labelOffset);
+  height: var(--labelOffset);
+  background: var(--cardColor);
+  left: 0;
+  bottom: 0;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  filter: brightness(0.75);
+}
+.olcards li .content::after {
+  content: "";
+  position: absolute;
+  height: var(--cardsGap);
+  width: var(--cardsGap);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.25), transparent 50%);
+  left: 0;
+  top: 100%;
+}
+.olcards li .icon {
+  grid-area: icon;
+  align-self: center;
+  font-size: 2em;
+}
+.olcards li .content .title {
+  grid-area: title;
+  font-size: 1.25em;
+  /* font-weight: 700; */
+}
+.olcards li .content .text {
+  grid-area: text;
 }
 
-.map{
-    width: 100%;
-    height: 80%;
-    border-radius: 8px;
-    overflow: hidden;
+
+
+/****************** stats *******************/
+
+.ip_infor .stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px, 150px));
+    gap: 0.5rem;
+    -webkit-box-pack: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.ip_infor .stats__item {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(36, 41, 46);
+    padding: 1rem;
+    border-radius: 0.25rem;
+    text-align: center;
+}
+
+.ip_more_info > div {
+    max-width: 1400px;
+    margin: 0px auto;
+}
+
+.ip_content_info {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    -webkit-box-pack: center;
+    justify-content: center;
+    max-width: 1200px !important;
+    margin-top: -1rem !important;
+}
+
+.ip_content_info .chart {
+    background-color: rgb(255, 255, 255);
+    max-width: 500px;
+    padding: 2rem;
+    border-radius: 0.25rem;
+    box-shadow: rgb(0 0 0 / 20%) 0px 5px 30px -15px;
+}
+
+.chart header {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.iZMYk header {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+header h2 {
+    display: inline-block;
+    margin: 0px;
+    font-size: 1.75rem;
+    background-image: linear-gradient(90deg, rgb(209, 213, 218) 50%, rgba(255, 255, 255, 0) 0px);
+    background-position: center bottom;
+    background-repeat: repeat-x;
+    background-size: 10px 2px;
+    padding-bottom: 6px;
 }
