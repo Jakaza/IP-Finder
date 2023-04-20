@@ -16,6 +16,7 @@
     <!-- Font Awaresome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/public/assets/css/main.css">
 
 
 </head>
@@ -30,7 +31,9 @@
         <div class="inner">
         <form class="form_container" id="formController">
           <label htmlFor="username">Find IP Infor</label>
-          <p class="example text-sm text-muted text-monospace">Type : www.google.com or 74.125.141.106</p>
+          <p class="example text-sm text-muted text-monospace">Enter domain e.g. www.google.com</p>
+          <p class="example text-sm text-muted text-monospace">Or</p>
+          <p class="example text-sm text-muted text-monospace">Enter IP e.g. 74.125.141.106</p> <br>
           <input name="address" type="text" id="address" />
         </form>
 
@@ -38,6 +41,12 @@
     </main>
 
   <div id="main_container">
+
+    <div class="blank_container">
+
+    </div>
+
+
       <main class="RateLimit__LimitStyles-sc-1et48hd-0 bREiXb">
         <div class="limit ">
           <div class="num">57 / 60</div>
@@ -82,31 +91,12 @@
     <section class="generail_ip_info"> 
     <h4>More About - <span>142.250.186.174</span> </h4>
 	<ol class="olcards">
-		<li style="--cardColor:#fc374e">
-			<div class="content">
-				<div class="title">Lorem Ipsum</div>
-			</div>
-		</li>
-		<li style="--cardColor:#36aeb3">
-			<div class="content">
-				<div class="title">Lorem Ipsum</div>
-			</div>
-		</li>
-		<li style="--cardColor:#162d59">
-			<div class="content">
-				<div class="title">Lorem Ipsum</div>
-			</div>
-		</li>
-		<li style="--cardColor:#f15f0e">
-			<div class="content">
-				<div class="title">Lorem Ipsum</div>
-			</div>
-		</li>
+		
 	</ol>
     </section>
 
 
-    <section class="Section-ngommr-0 ip_more_info iZMYk">
+    <section class="Section-ngommr-0 ip_more_info iZMYk hidden">
       <div class="ChartsStyles-sc-7w4exj-0 ip_content_info euKsvg">
         <div class="chart">
           <header>
@@ -177,6 +167,9 @@
 
 
         const formEl = document.getElementById('formController');
+        const generallListEl = document.querySelector('.olcards')
+        const ipMoreInfoEl = document.querySelector('.ip_more_info')
+        const blankContainer = document.querySelector('.blank_container')
 
         formEl.addEventListener('submit', (element)=>{
             element.preventDefault()
@@ -223,8 +216,75 @@
                   }
                   return response.json()
                 })
-                .then(data => console.log(data))
+                .then(resData => {
+                    upDateUL(resData.data)
+                })
                 .catch(error => console.error(error))
+        }
+
+
+
+
+        function updateGeneralListInfo(data){
+            const {ip, type, continent , continent_code , country , country_code , region ,region_code  , city , latitude , longitude, postal , capital , calling_code} = data
+            let template = `
+            <li style="--cardColor:#fc374e">
+                <div class="content">
+                    <div class="title">IP ${ip}</div>
+                </div>
+		    </li>
+            <li style="--cardColor:#fc374e">
+                <div class="content">
+                    <div class="title">continent ${continent}</div>
+                </div>
+		    </li>
+            <li style="--cardColor:#fc374e">
+                <div class="content">
+                    <div class="title">continent_code ${continent_code}</div>
+                </div>
+		    </li>
+            <li style="--cardColor:#fc374e">
+                <div class="content">
+                    <div class="title">country ${country}</div>
+                </div>
+		    </li>
+            <li style="--cardColor:#fc374e">
+                <div class="content">
+                    <div class="title">region ${region}</div>
+                </div>
+		    </li>
+            <li style="--cardColor:#fc374e">
+                <div class="content">
+                    <div class="title">city ${latitude}</div>
+                </div>
+		    </li>
+            <li style="--cardColor:#fc374e">
+                <div class="content">
+                    <div class="title">longitude ${longitude}</div>
+                </div>
+		    </li>
+            <li style="--cardColor:#fc374e">
+                <div class="content">
+                    <div class="title">IP ${postal}</div>
+                </div>
+		    </li>
+            <li style="--cardColor:#fc374e">
+                <div class="content">
+                    <div class="title">capital ${capital}</div>
+                </div>
+		    </li>
+            `
+            generallListEl.innerHTML = template
+        }
+
+        function upDateUL(data){
+            removeHidedenClass()
+            updateGeneralListInfo(data)
+        }
+
+        function removeHidedenClass(){
+            ipMoreInfoEl.classList.remove('hidden')
+            blankContainer.style.display = 'none'
         }
 
     </script>
