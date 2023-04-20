@@ -181,18 +181,19 @@
         formEl.addEventListener('submit', (element)=>{
             element.preventDefault()
             let searchValue = formEl['address'].value
-
+            let URL = ''
             const domain = isDomain(searchValue)
 
 
             if(domain){
                 console.log('handle a domain')
-
-                let URL = `https://ip-finder.jakaza1.repl.co/api/domain/${domain}`;
+                URL = `/api/domain/${searchValue}`
                 sendRequest(URL)
 
             }else{
                 console.log('handle an ip address')
+                URL = `/api/address/${searchValue}`
+                sendRequest(URL)
             }
 
 
@@ -214,20 +215,16 @@
 
 
         function sendRequest(url){
-            const request = new XMLHttpRequest();
-            request.open("GET", url ,true);
-
-            request.onload = () =>{
-                if(request.readyState == 4 && request.status == 200){   
-                    console.log(request.response);
-                } 
-            }
-
-            request.onload = () =>{
-                console.log('loading data.....');
-            }
-
-            request.send();
+              fetch(url)
+                .then(response => {
+                  console.log('loading.........')
+                  if (!response.ok) {
+                    throw new Error('Network response was not ok')
+                  }
+                  return response.json()
+                })
+                .then(data => console.log(data))
+                .catch(error => console.error(error))
         }
 
     </script>

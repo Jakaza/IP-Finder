@@ -1,6 +1,5 @@
 const dns = require("dns");
 const axios = require("axios")
-const Redis = require("ioredis");
 
 const getSearchedIpAddress = (req, res ) =>{
 
