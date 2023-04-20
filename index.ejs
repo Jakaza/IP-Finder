@@ -28,10 +28,10 @@
 
     <main>
         <div class="inner">
-        <form class="form_container">
-          <label htmlFor="username">Find IP Infor</label>
+        <form class="form_container" id="formEl">
+          <label htmlFor="address">Find IP Infor</label>
           <p class="example text-sm text-muted text-monospace">Type : www.google.com or 74.125.141.106</p>
-          <input name="username" type="text" />
+          <input name="address" type="text" id="address"/>
         </form>
 
         </div>
@@ -175,8 +175,21 @@
 
       
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="app.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+    <script>
+
+      const formEl = document.getElementById("formEl");
+      console.log(formEl);
+      
+      formEl.addEventListener("submit", (el)=> {
+        el.preventDefault();
+        alert('Hello World.....')
+        
+      }
+
+
+      
+    </script>
 
 
 </body>

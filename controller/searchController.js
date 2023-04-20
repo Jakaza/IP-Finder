@@ -1,9 +1,12 @@
 const dns = require("dns");
 const axios = require("axios")
+const Redis = require("ioredis");
 
 const getSearchedIpAddress = (req, res ) =>{
 
   let ip_address = req.params.keyname;
+
+  
     
   axios.get(`http://ipwho.is/${ip_address}`)
       .then(function (response) {

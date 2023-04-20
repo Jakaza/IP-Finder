@@ -1,10 +1,10 @@
 const express = require("express")
 const router = express.Router();
-const { getIpAdressDetails } = require("../controller/ipDetailsController")
+const { homePage } = require("../controller/pageController")
 const { getSearchedIpAddress, getSearchedDomainAddress } = require("../controller/searchController")
 
 
-router.get('/', getIpAdressDetails);
+router.get('/', homePage);
 router.get('/api/address/:keyname', getSearchedIpAddress);
 router.get('/api/domain/:keyname', getSearchedDomainAddress);
 
