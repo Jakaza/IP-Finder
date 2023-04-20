@@ -1,8 +1,10 @@
 const express = require("express")
 const router = express.Router();
-const { currentUserIp } = require("../controller/ipDetailsController")
+const { getIpAdressDetails } = require("../controller/ipDetailsController")
+const { getSearchedIpAddress } = require("../controller/searchController")
 
 
-router.get('/', currentUserIp);
+router.get('/', getIpAdressDetails);
+router.get('/api/v1/:keyname', getSearchedIpAddress);
 
 module.exports = router;
