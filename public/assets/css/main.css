@@ -72,7 +72,7 @@ a {
 #main_container{
   width: 100%;
   min-height: auto;
-  background: #ff1a1a;
+  margin-bottom: 70px;
 }
 .hidden{
   display: none;
@@ -172,9 +172,11 @@ a {
 /****************** generail_ip_info *******************/
 
 .generail_ip_info{
-  background: yellow;
   width: 80%;
   margin: 0 auto;
+  height: auto;
+  padding-bottom: 25px;
+  margin-bottom: 50px;
 }
 
 .olcards,
@@ -190,7 +192,7 @@ a {
   font-family: sans-serif;
   display: flex;
   flex-direction: column;
-  --cardsGap: 1rem;
+  --cardsGap: 0.5rem;
   gap: var(--cardsGap);
   padding-bottom: var(--cardsGap);
 }
@@ -198,12 +200,13 @@ a {
   counter-increment: cardCount;
   display: flex;
   color: white;
-  --labelOffset: 1rem;
+  --labelOffset: 0.8rem;
   --arrowClipSize: 1.5rem;
   margin-top: var(--labelOffset);
+  min-width: 80%;
 }
 
-.olcards li::before {
+/* .olcards li::before {
   content: counter(cardCount, decimal-leading-zero);
   background: white;
   color: var(--cardColor);
@@ -216,10 +219,10 @@ a {
   justify-content: center;
   align-items: center;
   padding-inline: 0.5em;
-}
+} */
 
 .olcards li .content {
-  background-color: var(--cardColor);
+  background-color: #26303c;
   --inlinePadding: 1em;
   --boxPadding: 0.5em;
   display: grid;
@@ -314,13 +317,7 @@ a {
     margin-top: -1rem !important;
 }
 
-.ip_content_info .chart {
-    background-color: rgb(255, 255, 255);
-    max-width: 500px;
-    padding: 2rem;
-    border-radius: 0.25rem;
-    box-shadow: rgb(0 0 0 / 20%) 0px 5px 30px -15px;
-}
+
 
 .chart header {
     display: flex;
@@ -345,3 +342,40 @@ header h2 {
     background-size: 10px 2px;
     padding-bottom: 6px;
 }
+
+
+
+/*************** chart-container ***********************/
+
+.ip_content_info .chart {
+    background-color: rgb(255, 255, 255);
+    max-width: 500px;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    box-shadow: rgb(0 0 0 / 20%) 0px 5px 30px -15px;
+  colo
+}
+
+.chart-container{
+   color: #26303c;
+}
+
+.chart-container ul{
+  margin: 0; 
+}
+
+
+
+.chart-container ul li {
+  list-style: none;
+  position: relative;
+  padding: 3px 0 2px 0px;
+}
+
+.chart-container ul li::before {
+  content: '*';
+  position: absolute;
+  top: 6px;
+  left: -15px;
+}
+
